@@ -1,0 +1,70 @@
+/* ============================================
+   VARIÁVEIS DE COR
+   ============================================ */
+:root {
+  --azul-escuro: #1e3a8a;
+  --azul-claro: #3b82f6;
+  --amarelo: #f59e0b;
+  --branco: #ffffff;
+  --cinza-fundo: #f8fafc;
+  --texto: #1f2937;
+  --sombra: rgba(0, 0, 0, 0.08);
+
+  --transicao: 0.3s ease;
+}
+
+/* Modo escuro */
+body.dark {
+  --azul-escuro: #0f172a;
+  --azul-claro: #1e293b;
+  --branco: #1e293b;
+  --cinza-fundo: #0b1120;
+  --texto: #e2e8f0;
+  --sombra: rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   RESET
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: var(--cinza-fundo);
+  color: var(--texto);
+  transition: background var(--transicao), color var(--transicao);
+}
+
+img { max-width: 100%; display: block; }
+
+/* ============================================
+   SCROLL REVEAL (aparece ao rolar)
+   ============================================ */
+.secao {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.secao.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Acessibilidade: quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .secao { opacity: 1; transform: none; }
+}

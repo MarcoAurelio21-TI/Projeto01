@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site pessoal de Marco — projetos de HTML, CSS e JavaScript.">
+  <meta name="author" content="Marco">
+
+  <!-- Open Graph (compartilhamento em redes) -->
+  <meta property="og:title" content="MeuProjeto — Marco">
+  <meta property="og:description" content="Site pessoal desenvolvido para praticar HTML, CSS e JS.">
+  <meta property="og:type" content="website">
+
+  <title>MeuProjeto — Marco</title>
+
+  <!-- Favicon emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <nav>
+      <div class="logo">MeuProjeto</div>
+
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="menu">
+        <li><a href="#hero">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <button class="tema-toggle" aria-label="Alternar tema">🌙</button>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero">
+    <div class="conteudo">
+      <h1>Titulo do Projeto</h1>
+      <p>Uma breve frase sobre o projeto. Aprendendo HTML, CSS e JavaScript na prática.</p>
+      <a href="#sobre" class="btn">Ver mais</a>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section id="sobre" class="secao">
+    <h2 class="secao__titulo">Sobre mim</h2>
+    <p class="secao__texto">
+      Olá! Meu nome é Marco e este é meu projeto de estudo.
+      Estou aprendendo HTML, CSS e JavaScript e construindo este site do zero.
+      Aqui você encontra um pouco sobre quem eu sou e o que eu faço.
+    </p>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section id="servicos" class="secao">
+    <h2 class="secao__titulo">Serviços</h2>
+    <p class="secao__texto">O que eu ofereço:</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card__icone">🎨</div>
+        <h3 class="card__titulo">Design</h3>
+        <p class="card__texto">Criação de layouts modernos e responsivos.</p>
+      </div>
+
+      <div class="card">
+        <div class="card__icone">💻</div>
+        <h3 class="card__titulo">Desenvolvimento</h3>
+        <p class="card__texto">Sites em HTML, CSS e JavaScript.</p>
+      </div>
+
+      <div class="card card--destaque">
+        <div class="card__icone">🚀</div>
+        <h3 class="card__titulo">Otimização</h3>
+        <p class="card__texto">Performance e SEO para seu site.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section id="contato" class="secao">
+    <h2 class="secao__titulo">Contato</h2>
+    <p class="secao__texto">Me manda uma mensagem!</p>
+
+    <form class="form" id="form-contato">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu email" required>
+      <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+      <p class="form__feedback" id="feedback"></p>
+    </form>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="redes">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:seuemail@exemplo.com">Email</a>
+    </div>
+    <p>© <span id="ano"></span> MeuProjeto — Feito com 💙</p>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <a href="#hero" class="topo" aria-label="Voltar ao topo">↑</a>
+
+  <!-- JS -->
+  <script src="./scripts/main.js"></script>
+</body>
+</html>

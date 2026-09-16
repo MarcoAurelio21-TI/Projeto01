@@ -1,0 +1,132 @@
+/* ============================================
+   BOTÃO
+   ============================================ */
+.btn {
+  display: inline-block;
+  background-color: var(--amarelo);
+  color: var(--azul-escuro);
+  padding: 0.75rem 1.75rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transicao);
+}
+
+.btn:hover {
+  background-color: #d97706;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================
+   CARDS (serviços)
+   ============================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--branco);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--sombra);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+  border-top: 4px solid var(--azul-claro);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card--destaque { border-top-color: var(--amarelo); }
+
+.card__icone {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.card__titulo {
+  color: var(--azul-escuro);
+  margin-bottom: 0.5rem;
+}
+body.dark .card__titulo { color: var(--amarelo); }
+
+.card__texto { font-size: 0.95rem; }
+
+/* ============================================
+   FORMULÁRIO
+   ============================================ */
+.form {
+  max-width: 550px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.form input,
+.form textarea {
+  padding: 0.9rem 1rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--branco);
+  color: var(--texto);
+  transition: border var(--transicao), box-shadow var(--transicao);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--azul-claro);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.form textarea { resize: vertical; }
+
+.form__feedback {
+  text-align: center;
+  font-weight: 600;
+  color: #16a34a;
+  min-height: 1.5rem;
+}
+
+/* ============================================
+   BOTÃO VOLTAR AO TOPO
+   ============================================ */
+.topo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  background: var(--amarelo);
+  color: var(--azul-escuro);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform var(--transicao), background var(--transicao);
+  z-index: 99;
+}
+
+.topo:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: #d97706;
+  color: #fff;
+}

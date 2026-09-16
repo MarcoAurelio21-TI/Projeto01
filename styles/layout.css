@@ -1,0 +1,194 @@
+/* ============================================
+   HEADER / MENU
+   ============================================ */
+header {
+  background-color: var(--azul-escuro);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px var(--sombra);
+  transition: background var(--transicao);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--amarelo);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transicao);
+}
+
+nav a:hover { color: var(--amarelo); }
+
+/* Botão tema */
+.tema-toggle {
+  background: transparent;
+  border: 2px solid var(--amarelo);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform var(--transicao);
+}
+.tema-toggle:hover { transform: scale(1.1); }
+
+/* Botão hambúrguer (escondido no desktop) */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--branco);
+  border-radius: 2px;
+  transition: var(--transicao);
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+#hero {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(-45deg, #1e3a8a, #3b82f6, #f59e0b, #1e3a8a);
+  background-size: 400% 400%;
+  animation: fundoAnimado 15s ease infinite;
+  color: #fff;
+}
+
+@keyframes fundoAnimado {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #fff, var(--amarelo));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#hero p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+  opacity: 0.95;
+  color: #fff;
+}
+
+.conteudo { animation: aparecer 1s ease; }
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   SEÇÕES
+   ============================================ */
+.secao {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.secao__titulo {
+  font-size: 2rem;
+  color: var(--azul-escuro);
+  margin-bottom: 1rem;
+}
+body.dark .secao__titulo { color: var(--amarelo); }
+
+.secao__texto { max-width: 700px; margin: 0 auto; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  background: var(--azul-escuro);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.redes a {
+  color: var(--amarelo);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transicao);
+}
+.redes a:hover { color: #fff; }
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+@media (max-width: 700px) {
+  #hero h1 { font-size: 2rem; }
+
+  .menu-toggle { display: flex; }
+
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--azul-escuro);
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  nav ul.aberto {
+    max-height: 300px;
+    padding: 1.5rem 0;
+  }
+}
